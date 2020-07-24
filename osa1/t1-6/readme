@@ -1,0 +1,3 @@
+docker run docker-clock
+
+given command to the container is -c

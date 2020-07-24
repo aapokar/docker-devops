@@ -1,0 +1,1 @@
+I set the FRONT_URL here in docker-compose.yml, I had to change it to match the nginx port

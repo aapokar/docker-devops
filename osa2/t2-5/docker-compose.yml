@@ -1,0 +1,19 @@
+version: '3'
+services:
+  front:
+    image: frot
+    ports: 
+      - 5000:5000
+    environment:
+      - API_URL=http://localhost:8000
+  back:
+    image: backdock
+    ports:
+      - 8000:8000
+    environment:
+      - FRONT_URL=http://localhost:5000
+      - REDIS=database
+      - REDIS_PORT=6379
+  database:
+    image: redis
+    

@@ -1,0 +1,6 @@
+docker run -d devopsdockeruh/exec_bash_exercise
+docker exec peaceful_williams tail -f ./logs.txt
+Secret message is:
+"Docker is easy"
+
+

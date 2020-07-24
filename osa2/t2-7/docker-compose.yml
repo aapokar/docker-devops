@@ -1,0 +1,19 @@
+version: '3'
+
+services: 
+
+    frontend:
+      image: kurkkufront
+      ports:
+        - 3000:3000
+
+    backend:
+      image: kurkkuback
+      volumes:
+        - ./src/model:/src/model
+      
+    training:
+      image: kurkkutrain
+      volumes:
+        - ./src/model:/src/model
+        - ./src/imgs:/src/imgs 

@@ -1,0 +1,4 @@
+I originally made those images with node, not ubuntu
+so I had to figure things out here, leading to more layers
+Front size in first build 516mb, -> 487mb
+back 341mb -> 312mb

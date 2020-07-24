@@ -1,0 +1,2 @@
+command to run the container:
+docker run -it curlerv1

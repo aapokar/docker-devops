@@ -1,0 +1,2 @@
+command: basics
+You found the correct password. Secret message is:\n"This is the secret message"
