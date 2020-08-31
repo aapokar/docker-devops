@@ -1,5 +1,5 @@
 # docker-devops
-mooc palautusrepositorio
+mooc palautusrepositorio. Kolmas osio jää pysyvästi kesken, mutta 2op kriteerit täyttyvät.
 
 ## 1.1
 * CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                        PORTS               NAMES
@@ -99,7 +99,9 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 
 ## 1.16
 * https://anekdotes1.herokuapp.com/
-(file in folder
+(file in folder)
+
+# OSA 2
 
 ## 2.1
 *version: '3'
