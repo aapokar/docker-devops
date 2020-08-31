@@ -97,6 +97,274 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 ## 1.15 
 * https://hub.docker.com/r/aapokar/react-anecdote-simple-app
 
-# 1.16
+## 1.16
 * https://anekdotes1.herokuapp.com/
 (file in folder
+
+## 2.1
+*version: '3'
+*services:
+*  logger-volume:
+*    image: devopsdockeruh/first_volume_exercise
+*    build: .
+*    volumes: 
+*      - ./logs.txt:/usr/app/logs.txt
+*    container_name: logger
+
+## 2.2 
+* version: '3'
+* services:
+*  first-webservice:
+*    image: devopsdockeruh/ports_exercise
+*    ports: 
+*      - 80:80
+*    container_name: webber
+
+## 2.3
+* version: '3'
+* services:
+*  front:
+*    image: frot
+*    ports: 
+*      - 5000:5000
+*    environment:
+*      - API_URL=http://localhost:8000
+
+*  back:
+*    image: backdock
+*    ports:
+*      - 8000:8000
+*    environment:
+*      - FRONT_URL=http://localhost:5000
+
+## 2.4 
+  
+* version: '3.2'
+* services:
+*  calculator:
+*      build: ./calculator
+*      image: calculator
+*      ports:
+*        - 3000:3000
+*      container_name: calculator
+*  compute1:
+*      build: ./compute
+*      image: compute
+*      environment:
+*        - VIRTUAL_HOST=compute.localtest.me
+*  compute2:
+*      build: ./compute
+*      image: compute
+*      environment:
+*        - VIRTUAL_HOST=compute.localtest.me
+*  load-balancer:
+*      build: ./load-balancer
+*      image: load-balancer
+*      volumes: 
+*        - /var/run/docker.sock:/tmp/docker.sock:ro
+*      ports:
+*        - 80:80
+*      container_name: load-balancer
+
+## 2.5
+
+* version: '3'
+* services:
+*  front:
+*    image: frot
+*    ports: 
+*      - 5000:5000
+*    environment:
+*      - API_URL=http://localhost:8000
+*  back:
+*    image: backdock
+*    ports:
+*      - 8000:8000
+*    environment:
+*      - FRONT_URL=http://localhost:5000
+*      - REDIS=database
+*      - REDIS_PORT=6379
+*  database:
+*    image: redis
+
+## 2.6
+
+* version: '3'
+* services:
+
+*  front:
+*    image: frot
+*    ports: 
+*      - 5000:5000
+*    environment:
+*      - API_URL=http://localhost:8000
+
+*  back:
+*    image: backdock
+*    ports:
+*      - 8000:8000
+*    environment:
+*      - FRONT_URL=http://localhost:5000
+*      - REDIS=redis
+*      - REDIS_PORT=6379
+*      - DB_USERNAME=postgres
+*      - DB_PASSWORD=pwd
+*      - DB_HOST=db
+
+*  redis:
+*    image: redis    
+
+*  db:
+*    image: postgres
+*    environment:
+*      - POSTGRES_PASSWORD=pwd
+*      - POSTGRES_USER=postgres
+
+## 2.7
+
+* version: '3'
+
+* services: 
+
+*    frontend:
+*      image: kurkkufront
+*      ports:
+*        - 3000:3000
+
+*    backend:
+*      image: kurkkuback
+*      volumes:
+*        - ./src/model:/src/model
+      
+*    training:
+*      image: kurkkutrain
+*      volumes:
+*        - ./src/model:/src/model
+*        - ./src/imgs:/src/imgs 
+
+## 2.8 
+
+* version: '3'
+* services:
+
+*  front:
+*    image: frot
+*    ports: 
+*      - 5000:5000
+*    environment:
+*      - API_URL=http://localhost:8000
+
+*  back:
+*    image: backdock
+*    ports:
+*      - 8000:8000
+*    environment:
+*      - FRONT_URL=http://localhost:5000
+*      - REDIS=redis
+*      - REDIS_PORT=6379
+*      - DB_USERNAME=postgres
+*      - DB_PASSWORD=pwd
+*      - DB_HOST=db
+
+*  redis:
+*    image: redis    
+
+*  db:
+*    image: postgres
+*    environment:
+*      - POSTGRES_PASSWORD=pwd
+*      - POSTGRES_USER=postgres
+
+*  nginx:
+*    image: nginx:alpine
+*    ports:
+*      - 8080:80
+*    volumes:
+*      - ./nginx.conf:/etc/nginx/nginx.conf
+
+## 2.9
+
+* version: '3'
+* services:
+
+*  front:
+*    image: frot
+*    ports: 
+*      - 5000:5000
+*    environment:
+*      - API_URL=http://localhost:8000
+
+*  back:
+*    image: backdock
+*    ports:
+*      - 8000:8000
+*    environment:
+*      - FRONT_URL=http://localhost
+*      - REDIS=redis
+*      - REDIS_PORT=6379
+*      - DB_USERNAME=postgres
+*      - DB_PASSWORD=pwd
+*      - DB_HOST=db
+
+*  redis:
+*    image: redis    
+
+*  db:
+*    image: postgres
+*    environment:
+*      - POSTGRES_PASSWORD=pwd
+*      - POSTGRES_USER=postgres
+*    volumes:
+*      - ./database:/var/lib/postgresql/data
+
+*  nginx:
+*    image: nginx:alpine
+*    ports:
+*      - 80:80
+*    volumes:
+*      - ./nginx.conf:/etc/nginx/nginx.conf
+
+## 2.10
+
+* I set the FRONT_URL here in docker-compose.yml, I had to change it to match the nginx port
+
+  
+* version: '3'
+* services:
+
+*  front:
+*    image: frot
+*    ports: 
+*      - 5000:5000
+*    environment:
+*      - API_URL=http://localhost:8000
+
+*  back:
+*    image: backdock
+*    ports:
+*      - 8000:8000
+*    environment:
+*      - FRONT_URL=http://localhost
+*      - REDIS=redis
+*      - REDIS_PORT=6379
+*      - DB_USERNAME=postgres
+*      - DB_PASSWORD=pwd
+*      - DB_HOST=db
+
+*  redis:
+*    image: redis    
+
+*  db:
+*    image: postgres
+*    environment:
+*      - POSTGRES_PASSWORD=pwd
+*      - POSTGRES_USER=postgres
+*    volumes:
+*      - ./database:/var/lib/postgresql/data
+
+*  nginx:
+*    image: nginx:alpine
+*    ports:
+*      - 80:80
+*    volumes:
+*      - ./nginx.conf:/etc/nginx/nginx.conf
