@@ -103,9 +103,11 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 
 # OSA 2
 
+Complete submissions are in their folders
+
 ## 2.1
-*version: '3'
-*services:
+
+* services:
 *  logger-volume:
 *    image: devopsdockeruh/first_volume_exercise
 *    build: .
@@ -114,7 +116,7 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 *    container_name: logger
 
 ## 2.2 
-* version: '3'
+
 * services:
 *  first-webservice:
 *    image: devopsdockeruh/ports_exercise
@@ -123,7 +125,7 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 *    container_name: webber
 
 ## 2.3
-* version: '3'
+
 * services:
 *  front:
 *    image: frot
@@ -141,7 +143,7 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 
 ## 2.4 
   
-* version: '3.2'
+
 * services:
 *  calculator:
 *      build: ./calculator
@@ -170,7 +172,7 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 
 ## 2.5
 
-* version: '3'
+
 * services:
 *  front:
 *    image: frot
@@ -191,7 +193,7 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 
 ## 2.6
 
-* version: '3'
+
 * services:
 
 *  front:
@@ -224,7 +226,6 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 
 ## 2.7
 
-* version: '3'
 
 * services: 
 
@@ -246,7 +247,6 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 
 ## 2.8 
 
-* version: '3'
 * services:
 
 *  front:
@@ -286,7 +286,6 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 
 ## 2.9
 
-* version: '3'
 * services:
 
 *  front:
@@ -331,7 +330,6 @@ I changed ruby version in Gemfile and added gems execjs and therubyracer
 * I set the FRONT_URL here in docker-compose.yml, I had to change it to match the nginx port
 
   
-* version: '3'
 * services:
 
 *  front:
